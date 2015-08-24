@@ -1,4 +1,4 @@
-var scotchTodo = angular.module('MeanTodo', []);
+var MeanTodo = angular.module('MeanTodo', []);
 
 function mainController($scope, $http) {
     $scope.formData = {};
@@ -24,6 +24,7 @@ function mainController($scope, $http) {
             .error(function(data) {
                 console.log('Error: ' + data);
             });
+            console.log("is this even working")
     };
 
     // delete a todo after checking it

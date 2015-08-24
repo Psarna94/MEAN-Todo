@@ -8,8 +8,8 @@ var methodOverride = require('method-override');
 
 
 // configure (start app with node server.js) ======================================
-mongoose.connect('mongodb://pranusarna:shitjustgotreal@apollo.modulusmongo.net:27017/xywU3xag');
-
+// mongoose.connect('mongodb://pranusarna:shitjustgotreal@apollo.modulusmongo.net:27017/xywU3xag');
+mongoose.connect('mongodb://<user>:<pass>@apollo.modulusmongo.net:27017/xywU3xag');
 app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
   app.use(morgan('dev'));                                         // log every request to the console
   app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
@@ -68,7 +68,7 @@ var Todo = mongoose.model('Todo',{
   });
 
   app.get('*', function(req, res) {
-        res.sendfile('./public/index.html'); 
+        res.sendfile('./public/index.html');
     });
 
 
